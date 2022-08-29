@@ -20,13 +20,6 @@ public static partial class SpraySurface
 		//
 		var decalPath = $"materials/spray_{colorType}.decal";
 
-		var surf = self.GetBaseSurface();
-		while ( string.IsNullOrWhiteSpace( decalPath ) && surf != null )
-		{
-			decalPath = Rand.FromArray( surf.ImpactEffects.BulletDecal );
-			surf = surf.GetBaseSurface();
-		}
-
 		if ( !string.IsNullOrWhiteSpace( decalPath ) )
 		{
 			if ( ResourceLibrary.TryGet<DecalDefinition>( decalPath, out var decal ) )

@@ -2,7 +2,6 @@
 using System;
 using System.Linq;
 
-
 partial class Pawn : Player
 {
 	ClothingContainer clothing = new();
@@ -64,6 +63,7 @@ partial class Pawn : Player
 		sprayIndex++;
 		if ( sprayIndex > 3 ) sprayIndex = 0;
 
+
 		switch(sprayIndex)
 		{
 			case 0:
@@ -79,7 +79,6 @@ partial class Pawn : Player
 				sprayColor = "white";
 				break;
 		}
-
 	}
 
 	public void Spray()

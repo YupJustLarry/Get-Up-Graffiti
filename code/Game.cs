@@ -9,7 +9,15 @@ public partial class GraffitiGame : Sandbox.Game
 {
 	public GraffitiGame()
 	{
+		if ( IsClient )
+			_ = new Hud();
+	}
 
+	[Event.Hotload]
+	public void Hotload()
+	{
+		if ( IsClient )
+			_ = new Hud();
 	}
 
 	public override void DoPlayerSuicide( Client cl )
