@@ -1,4 +1,5 @@
 ﻿using Sandbox;
+using Sandbox.UI.Tests;
 using System;
 using System.Linq;
 
@@ -50,9 +51,10 @@ partial class Pawn : Player
 		if( IsServer )
 		{
 			//Spray
-			if(Input.Down(InputButton.PrimaryAttack) )
+			if (Input.Down(InputButton.PrimaryAttack) )
 				Spray();
 
+			//Swap colours
 			if (Input.Pressed(InputButton.SecondaryAttack) )
 				SwitchSpray();
 		}
@@ -91,12 +93,7 @@ partial class Pawn : Player
 			.Run();
 
 		if(tr.Hit)
-		{
-			if ( !Prediction.FirstTime )
-				return;
-
 			tr.Surface.DoSpraySurface( tr, sprayColor );
-		}
 	}
 
 	public override void FrameSimulate( Client cl )
